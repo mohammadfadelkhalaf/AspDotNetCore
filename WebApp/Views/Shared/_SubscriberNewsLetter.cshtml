@@ -1,0 +1,92 @@
+﻿@model SubscribeViewModel
+
+
+@* @if (Model.IsSbuscribed)
+{
+    <div>You are Subscribed</div>
+} *@
+
+<footer class="footer">
+    <div class="container pt-lg-4">
+        <div class="row pb-5">
+            <h2>Dont miss anything</h2>
+            <div class="col-lg-4 col-md-6">
+
+                <form method="post" asp-controller="Subscribers" asp-action="Subscribe">
+                    <label for="subscr-email" class="form-label">SignUp to our newsletter</label>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="position-relative mb-4">
+                                <div class="input-group">
+                                    <input asp-for="DailyNewsLetter" type="checkbox">
+                                    <label asp-for="DailyNewsLetter"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="position-relative mb-4">
+                                <div class="input-group">
+                                    <input asp-for="AdvertisingUpdates" type="checkbox">
+                                    <label asp-for="AdvertisingUpdates"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="position-relative mb-4">
+                                <div class="input-group">
+                                    <input asp-for="WeekInReview" type="checkbox">
+                                    <label asp-for="WeekInReview"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="position-relative mb-4">
+                                <div class="input-group">
+                                    <input asp-for="EventUpdates" type="checkbox">
+                                    <label asp-for="EventUpdates"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="position-relative mb-4">
+                                <div class="input-group">
+                                    <input asp-for="StartupWeekly" type="checkbox">
+                                    <label asp-for="StartupWeekly"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="position-relative mb-4">
+                                <div class="input-group">
+                                    <input asp-for="Podcasts" type="checkbox">
+                                    <label asp-for="Podcasts"></label>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    
+                    
+                 
+                    
+                    
+                    <div class="input-group">
+
+                        <input asp-for="Email" type="email" class="form-control rounded-start ps-5" placeholder="Your email">
+         
+                        <div class="invalid-tooltip position-absolute top-100 start-0">Please provide a valid email address.</div>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </div>
+                   
+                    @if (!string.IsNullOrEmpty(TempData["statusMessage"]?.ToString()))
+                    {
+                        <span> @TempData["statusMessage"]</span>
+                    }
+                    else
+                    {
+                        <span>Yes , I agree with terms and conditions</span>
+                    }
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>

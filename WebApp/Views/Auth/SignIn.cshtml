@@ -1,0 +1,51 @@
+﻿@model SignInViewModel
+
+
+@{
+    ViewData["Title"] = "SignIn";
+}
+<div class="container d-flex flex-wrap justify-content-center  h-100 pt-5">
+  
+
+    <div class="w-100 align-self-end pt-1 pt-md-4 pb-4" style="max-width: 526px;">
+        <h1 class="text-center text-xl-start">Welcome Back</h1>
+        <p class="text-center text-xl-start pb-3 mb-3">Don’t have an account yet? <a asp-controller="Auth" asp-action="SignUp">Register here.</a></p>
+
+        @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
+        {
+
+            <div class="alert">@ViewData["ErrorMessage"]</div>
+        }
+        <form  method="post" asp-controller="Auth" asp-action="SignIn" novalidate>
+            
+         
+               
+        
+            <div class="position-relative mb-4">
+                <label asp-for="Eamil" class="form-label fs-base">Email</label>
+                <input type="email" asp-for="Eamil" class="form-control form-control-lg" >
+                <span asp-validation-for="Eamil"></span>
+               
+            </div>
+            <div class="mb-4">
+                <label asp-for="Password" class="form-label fs-base">Password</label>
+                <input asp-for="Password" type="password"  class="form-control form-control-lg">
+                <span asp-validation-for="Password"></span>
+               
+            </div>
+            <div class="mb-4">
+                <div class="form-check">
+                    <input type="checkbox"  asp-for="RememberMe" >
+                    <label asp-for="RememberMe"  class="form-check-label fs-base">Remember me</label>
+                    <span asp-validation-for="RememberMe"></span>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary shadow-primary btn-lg w-100">Sign in</button>
+        </form>
+        <a asp-controller="Account" asp-action="Forget" class="btn btn-link btn-lg w-100">Forgot your password?</a>
+        <hr class="my-4">
+        
+       
+    </div>
+  
+</div>

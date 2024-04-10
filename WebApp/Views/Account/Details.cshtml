@@ -1,0 +1,112 @@
+﻿@* @model AccountDetailsViewModel
+
+@{
+    ViewData["Title"] = $"{Model.ProfileInfo?.FirstName} { Model.ProfileInfo?.FirstName}  Account";
+}
+
+<section class="container pt-5">
+    <div class="row">
+
+
+       
+        <aside class="col-lg-3 col-md-4  account acc1">
+            <div class="position-sticky top-0">
+                <div class="text-center pt-5">
+                    <div style="display:table; position:relative;" class=" imgdiv  pt-5 mb-3">
+
+
+                        <img src="~/images/@Model.ProfileInfo.ProfileImageUrl" class="d-block rounded-circle" width="120" alt="John Doe">
+                      
+                    </div>
+                    <h2 class="h5 mb-1">@($"{Model.ProfileInfo?.FirstName}{Model.ProfileInfo?.LastName}")</h2>
+                    <p class="mb-3 pb-3">@Model.ProfileInfo?.Email</p>
+                    <div id="account-menu" class="list-group list-group-flush collapse d-md-block">
+                        <a asp-controller="Account" asp-action="Details" class="list-group-item list-group-item-action d-flex align-items-center active">
+                            
+                            Account Details
+                        </a>
+                        <a asp-controller="Auth" asp-action="SignOut" class="list-group-item list-group-item-action d-flex align-items-center">
+                           
+                            Sign Out
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+
+      
+        <div class="col-md-8 offset-lg-1 account mb-2 mb-lg-4 pt-md-5 mt-n3 mt-md-0">
+            <div class="ps-md-3 ps-lg-0 mt-md-2 py-md-4">
+                <h1 class="h2 pt-xl-1 pb-3">Account Details</h1>
+
+               
+                <h2 class="h5 text-primary ">Basic info</h2>
+                <form method="post" asp-controller="Account" asp-action="Details"  novalidate>
+                    <div class="row pb-2">
+                        <div class="col-sm-6 mb-4">
+                            <label asp-for="BasicInfo.FirstName" class="form-label fs-base">First name</label>
+                            <input type="text" asp-for=" BasicInfo.FirstName" class="form-control form-control-lg">
+                            <span asp-validation-for=" BasicInfo.FirstName"></span>
+                        </div>
+                        <div class="col-sm-6 mb-4">
+                            <label asp-for="BasicInfo.LastName" class="form-label fs-base">Last name</label>
+                            <input type="text" asp-for=" BasicInfo.LastName" class="form-control form-control-lg">
+                            <span asp-validation-for=" BasicInfo.LastName"></span>
+                        </div>
+                        <div class="col-sm-6 mb-4">
+                            <label asp-for="BasicInfo.Eamil" class="form-label fs-base">Email</label>
+                            <input type="text" asp-for=" BasicInfo.Eamil" class="form-control form-control-lg">
+                            <span asp-validation-for=" BasicInfo.Eamil"></span>
+                        </div>
+                        <div class="col-sm-6 mb-4">
+                            <label asp-for="BasicInfo.Phone" class="form-label fs-base">Phone<small class="text-muted">(optional)</small></label>
+                            <input type="text" asp-for=" BasicInfo.Phone" class="form-control form-control-lg">
+                            <span asp-validation-for=" BasicInfo.Phone"></span>
+                        </div>
+                        <div class="col-12 mb-4">
+                            <label asp-for="BasicInfo.Biography" class="form-label fs-base">Bio <small class="text-muted">(optional)</small></label>
+                            <textarea asp-for="BasicInfo.Biography" class="form-control form-control-lg" rows="4" placeholder="Add a short bio..."></textarea>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <button type="reset" class="btn btn-secondary me-3">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+
+               
+                <h2 class="h5 text-primary pt-1 pt-lg-3 my-4">Address</h2>
+                <form asp-controller="Account" asp-action="Details" novalidate>
+                    <div class="row pb-2">
+                        <div class="col-12 mb-4">
+                            <label asp-for="AddressInfo.AddressLine_1" class="form-label fs-base">Address line 1</label>
+                            <input type="text" asp-for="AddressInfo.AddressLine_1" class="form-control form-control-lg" required>
+                            <span asp-validation-for="AddressInfo.AddressLine_1"></span>
+                        </div>
+                        <div class="col-12 mb-4">
+                            <label asp-for ="AddressInfo.AddressLine_2" class="form-label fs-base">Address line 2 <small class="text-muted">(optional)</small></label>
+                            <input type="text" asp-for="AddressInfo.AddressLine_2" class="form-control form-control-lg">
+                            <span asp-validation-for="AddressInfo.AddressLine_2"></span>
+                        </div>
+                         <div class="col-12 mb-4">
+                            <label asp-for ="AddressInfo.PostalCode" class="form-label fs-base">Postal code <small class="text-muted">(optional)</small></label>
+                            <input type="text" asp-for="AddressInfo.PostalCode" class="form-control form-control-lg">
+                            <span asp-validation-for="AddressInfo.PostalCode"></span>
+                        </div>
+                        <div class="col-12 mb-4">
+                            <label asp-for="AddressInfo.City" class="form-label fs-base">City <small class="text-muted">(optional)</small></label>
+                            <input type="text" asp-for="AddressInfo.City" class="form-control form-control-lg">
+                            <span asp-validation-for="AddressInfo.City"></span>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <button type="reset" class="btn btn-secondary me-3">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+
+               
+        </div>
+    </div>
+</section> *@

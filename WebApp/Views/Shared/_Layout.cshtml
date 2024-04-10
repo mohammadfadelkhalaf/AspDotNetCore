@@ -1,49 +1,115 @@
-﻿<!DOCTYPE html>
+﻿@using Infrastructure.Entites
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<UserEntity> _signInManger
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - WebApp</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    @* <title>@ViewData["Title"] - Silicon</title> *@
+    @if (!string.IsNullOrWhiteSpace(ViewData["Title"]?.ToString()))
+    {
+            <title>@ViewData["Title"] - Silicon</title>
+
+    }
+    else
+    {
+            <title> Silicon</title>
+    }
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/WebApp.styles.css" asp-append-version="true" />
+    <link href="~/css/account.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/header.css" />
+    <link rel="stylesheet" href="~/css/Main.css" />
+    <link rel="stylesheet" href="~/css/SignIn.css" />
+    <link rel="stylesheet" href="~/css/SignUp.css" />
+    <link href="~/css/Course.css" rel="stylesheet" />
+
+
+
+    @*  <link rel="stylesheet" href="~/Crud_OperationsDotNet8.styles.css" asp-append-version="true" /> *@
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebApp</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-sticky">
+        <div class="container px-3">
+            <a href="index.html" class="navbar-brand pe-3">
+                <img src="~/images/logo.svg" width="47" alt="Silicon">
+                Silicon
+            </a>
+
+            <div id="navbarNav" class="offcanvas offcanvas-end">
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">OverView</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Features</a>
+                        </li>
+                        @if (_signInManger.IsSignedIn(User))
+
+                        {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Courses" asp-action="index">courses</a>
+                                </li>
+                        }
+
+
                     </ul>
                 </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - WebApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+
+            <div>
+                @if (_signInManger.IsSignedIn(User))
+                {
+                        <a asp-controller="Auth" asp-action="SignOut" class="btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex">SignOut</a>
+                        <a asp-controller="Account" asp-action="Details" class="btn btn-secondary  btn-sm fs-sm rounded d-none d-lg-inline-flex">  My Account </a>
+                }
+                else
+                {
+                        <a asp-controller="Auth" asp-action="SignUp" class="btn btn-primary ">
+
+                            SignUp
+                        </a>
+                        <a asp-controller="Auth" asp-action="SignIn" class="btn btn-secondary">
+                            <i class=""></i>
+                            SignIn
+                        </a>
+                }
+
+            </div>
         </div>
-    </footer>
+    </nav>
+
+
+
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+
+
+
+
+    <a asp-controller="Subscribers" asp-action="Index" class="btn btn-primary sticky-bottom">Subscribe NewsLetters</a>
+
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>
