@@ -1,0 +1,32 @@
+﻿.account {
+    padding-bottom: 3rem !important
+}
+.acc1 {
+    margin-top: -3rem !important
+}
+
+
+.imgdiv {
+    margin-top: .5rem !important;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    
+}
+
+.hh {
+    margin-bottom: .25rem !important;
+    line-height: 1.4;
+}
+ddd {
+    display: block;
+}
+.list-group-item::before {
+    content: counters(section, ".") ". ";
+    counter-increment: section
+}
+
+.list-group-item {
+    position: relative;
+    display: block;

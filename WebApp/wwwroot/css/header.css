@@ -1,0 +1,37 @@
+﻿.navbar-nav a {
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.mb-2 {
+    margin-bottom: .5rem !important;
+}
+.me-auto {
+    margin-right: auto !important;
+}
+navbar :hover {
+    color: #6366f1;
+}
+navbar :disabled {
+    color: #9397ad;
+}
+navbar :active {
+    color: blue;
+}
+.navbar {
+    padding-left: 0;
+   
+    color: #33354d;
+  
+}
+
+.btn-primary:hover {
+    color: #fff;
+ 
+    border-color: #4044ee;
+  
+}
+

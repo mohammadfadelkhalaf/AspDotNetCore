@@ -1,0 +1,21 @@
+﻿.bg-repeat-0 {
+    background-repeat: no-repeat !important;
+}
+.bg-position-center {
+    background-position: center !important;
+}
+.bg-size-cover {
+    background-size: cover !important;
+}
+.w-50 {
+    width: 50% !important;
+}
+.end-0 {
+    right: 0 !important;
+}
+.top-0 {
+    top: 0 !important;
+}
+.position-absolute {
+    position: absolute !important;
+}
