@@ -1,0 +1,80 @@
+﻿@* @model CourseRegisterationFormViewModel
+
+<section class="container pt-5">
+
+    <div class="w-100 align-self-end pt-1 pt-md-4 pb-4" style="max-width: 526px;">
+        <h1 class="text-center" >Create New Course</h1>
+        
+
+        <form method="post" asp-controller="Courses" asp-action="Create" novalidate>
+            <div class="row">
+                <div class="col-12">
+                    <div class="position-relative mb-4">
+                        <label asp-for="Title" class="form-label fs-base"> Tilte</label>
+                        <input asp-for="Title" type="text" id="FirstName" class="form-control form-control-lg" required>
+                        <span asp-validation-for="Title"></span>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="position-relative mb-4">
+                        <label asp-for="Price" class="form-label fs-base">Price</label>
+                        <input asp-for="Price" type="text" id="FirstName" class="form-control form-control-lg" required>
+                        <span asp-validation-for="Price"></span>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="position-relative mb-4">
+                        <label asp-for="DisCountPrice" class="form-label fs-base">Discount</label>
+                        <input asp-for="DisCountPrice" type="text" class="form-control form-control-lg" required>
+                        <span asp-validation-for="DisCountPrice"></span>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="position-relative mb-4">
+                        <label asp-for="Hours" class="form-label fs-base">Hours</label>
+                        <input asp-for="Hours" type="text" class="form-control form-control-lg" required>
+                        <span asp-validation-for="Hours"></span>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="position-relative mb-4">
+                        <label asp-for="LikesInNumbers" class="form-label fs-base">Likes In Numbers</label>
+                        <input asp-for="LikesInNumbers" type="text" class="form-control form-control-lg" required>
+                        <span asp-validation-for="LikesInNumbers"></span>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="position-relative mb-4">
+                        <label asp-for="LikesInProcent" class="form-label fs-base">Likes In Precent</label>
+                        <input asp-for="LikesInProcent" type="text" class="form-control form-control-lg" required>
+                        <span asp-validation-for="LikesInProcent"></span>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="position-relative mb-4">
+                        <label asp-for="Author" class="form-label fs-base">Author</label>
+                        <input asp-for="Author" type="text" class="form-control form-control-lg" required>
+                        <span asp-validation-for="Author"></span>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <div class="form-check">
+                        <input asp-for="IsBestSeller" type="checkbox">
+
+                        <label asp-for="IsBestSeller" class="form-check-label fs-base"> <a style="color:#6366f1" href="#">Is Best Seller</a></label>
+                        <span asp-validation-for="IsBestSeller"></span>
+                    </div>
+                </div>
+            </div>
+           
+            <button type="submit" class="btn btn-primary shadow-primary btn-lg w-100"> Create</button>
+        </form>
+
+    </div>
+
+
+
+   
+</section> *@

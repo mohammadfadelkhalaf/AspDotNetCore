@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewData["Title"] = "Subscribe";
+}
+@* 
+@if (bool.Parse(ViewData["Subscribed"]!.ToString()!)){
+    <div>You are Subscribed</div>
+}
+<form method="post" asp-controller="Course" asp-action="Subscribe">
+
+    <input asp-for="@Model.Email" />
+    <button type="submit">Subscribe</button>
+</form> *@
