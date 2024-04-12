@@ -7,6 +7,7 @@ namespace WebApi.Dtos
         [Required]
         public string Title { get; set; } = null!;
         public string? ImageName { get; set; }
+        //nullable
         public string? Price { get; set; }
         public string? DisCountPrice { get; set; }
         public string? Hours { get; set; }

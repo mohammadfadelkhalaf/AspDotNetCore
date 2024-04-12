@@ -15,6 +15,7 @@ namespace WebApi.Models
         public string? LikesInProcent { get; set; }
         public string? Author { get; set; }
         public bool IsBestSeller { get; set; }
+        //adding course data
 
         public static implicit operator Course(Infrastructure.Entites.CourseEntity courseentity)
         {
