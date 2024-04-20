@@ -1,4 +1,53 @@
-﻿.pb-4 {
+﻿
+
+p {
+    margin-top: 0;
+    margin-bottom: 1.25rem
+}
+
+input, button, select, optgroup, textarea {
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit
+}
+
+
+small, .small {
+    font-size: 0.875em
+}
+
+
+.form-text {
+    margin-top: .25rem;
+    font-size: 0.75rem;
+    color: var(--si-gray-600)
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .625rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #565973;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: var(--si-border-width) solid #d4d7e5;
+    border-radius: var(--si-border-radius);
+    box-shadow: var(--si-box-shadow-inset);
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out
+}
+
+address {
+    margin-bottom: 1rem;
+    font-style: normal;
+    line-height: inherit
+}
+.pb-4 {
     padding-bottom: 1.5rem !important;
 }
 .pt-5 {
@@ -50,8 +99,7 @@ input, button, select, optgroup, textarea {
         padding-block: 1px;
         padding-inline: 2px;
     }
-    input:not([type="file" i], [type="image" i], [type="checkbox" i], [type="radio" i]) {
-    }
+  
 input {
 
    

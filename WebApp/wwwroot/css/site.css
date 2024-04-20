@@ -22,3 +22,29 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.swap-image {
+    position: relative;
+    display: inline-block;
+    user-select: none
+}
+
+    .swap-image .swap-from, .swap-image .swap-to {
+        display: block;
+        transition: opacity .25s ease-in-out
+    }
+
+    .swap-image .swap-to {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0
+    }
+
+    .swap-image:hover .swap-from, .swap-image.active .swap-from {
+        opacity: 0
+    }
+
+    .swap-image:hover .swap-to, .swap-image.active .swap-to {
+        opacity: 1
+    }

@@ -1,0 +1,44 @@
+﻿@model SubscribeViewModel
+
+
+@* @if (Model.IsSbuscribed)
+{
+    <div>You are Subscribed</div>
+} *@
+
+<footer class="footer">
+    <div class="container pt-lg-4">
+        <div class="row pb-5">
+            <h2>Dont miss anything</h2>
+            <div class="col-lg-4 col-md-6">
+
+                <form method="post">
+                    <label for="subscr-email" class="form-label">UnSubscribe Of our newsletter</label>
+                   
+
+
+
+
+                    <div class="input-group">
+
+                        <input asp-for="Email" type="email" class="form-control rounded-start ps-5" placeholder="Your email"><br /><br />
+
+                        <div class="invalid-tooltip position-absolute top-100 start-0">Please provide a valid email address.</div>
+                            <button type="submit" class="btn btn-danger" asp-controller="Subscribers" asp-action="UnSubscribe">UnSubscribe</button>
+                    </div>
+                    <br />
+                    @if (!string.IsNullOrEmpty(TempData["statusMessage"]?.ToString()))
+                    {
+                        <span> @TempData["statusMessage"]</span>
+                    }
+                   
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>
+<br />
+<br />
+<br />
+<br />
+<br />

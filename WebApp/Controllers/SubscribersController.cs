@@ -62,6 +62,49 @@ namespace WebApp.Controllers
         }
 
 
+        //public IActionResult UnSubscribe()
+        //{
+        //    return View(new SubscribeViewModel());
+        //}
+        [HttpPost]
+        public async Task<IActionResult> UnSubscribe(SubscribeViewModel entity)
+        {
+            using var http = new HttpClient();
+            //var json = JsonConvert.SerializeObject(entity);
+            //var content = new StringContent(json, Encoding.UTF8, "application/json");
+            //var response = await http.DeleteAsync("http://localhost:5233/api/Subscribers",entity.Email);
+
+
+
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Delete,
+                RequestUri = new Uri("http://localhost:5233/api/Subscribers"),
+                Content = new StringContent(JsonConvert.SerializeObject(entity), Encoding.UTF8, "application/json")
+            };
+            var response = await http.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+            {
+                //  ViewData["Subscribed"] = true;
+                TempData["statusMessage"] = "you are Unsubscribed";
+            }
+            else if (response.StatusCode == HttpStatusCode.NotFound)
+            {
+                TempData["statusMessage"] = "your email is Not exists";
+            }
+            //using var httpclient = new HttpClient();
+            //httpclient.BaseAddress=new Uri("http://localhost:5233/api/Subscribers");
+            //var deleted =await httpclient.DeleteAsync(email);
+            //if (deleted.IsSuccessStatusCode) { TempData["statusMessage"] = "you are Unsubscribed"; }
+            //else if (deleted.StatusCode == HttpStatusCode.Conflict)
+            //{
+            //    TempData["statusMessage"] = "you Email is Invalid";
+            //}
+
+            return RedirectToAction("Index", "Subscribers", "Subscribe");
+        }
+
+
 
 
 

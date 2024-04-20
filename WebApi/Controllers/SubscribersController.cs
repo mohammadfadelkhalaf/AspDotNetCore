@@ -37,9 +37,9 @@ namespace WebApi.Controllers
             return BadRequest();
         }
         [HttpDelete]
-        public async Task<IActionResult> UnSubscribe(string email)
+        public async Task<IActionResult> UnSubscribe(SubscriberEntity entity)
         {
-            var subscriber = await _context.Subscribers.FirstOrDefaultAsync(x => x.Email == email);
+            var subscriber = await _context.Subscribers.FirstOrDefaultAsync(x => x.Email == entity.Email);
             if (subscriber != null)
             {
 

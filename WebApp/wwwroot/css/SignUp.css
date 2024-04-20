@@ -1,4 +1,12 @@
-﻿.bg-repeat-0 {
+﻿
+
+small, .small {
+    font-size: 0.875em
+}
+
+
+
+.bg-repeat-0 {
     background-repeat: no-repeat !important;
 }
 .bg-position-center {

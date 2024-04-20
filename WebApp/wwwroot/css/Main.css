@@ -1,4 +1,25 @@
-﻿body {
+﻿.main {
+    padding-top: 1rem !important;
+}
+.section1 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    margin-bottom: 1rem !important;
+}
+.leftsec {
+    text-align: center !important;
+    margin-top: 1.5rem !important;
+    padding-top: 3rem !important;
+}
+.text-gradient-primary {
+    background: linear-gradient(to right, #6366f1, #8b5cf6, #d946ef);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box
+}
+
+body {
     font-family: "Manrope", sans-serif;
 }
 
@@ -39,9 +60,7 @@ p {
 .text-center {
     text-align: center !important;
 }
-.btn:not([class^=btn-outline-]):not([class*=" btn-outline-"]):not(.btn-secondary):not(.btn-light):not(.btn-link) {
-    color: #fff;
-}
+
 .btn:hover, .btn:disabled, .btn.disabled {
     box-shadow: none !important;
 }
@@ -81,4 +100,30 @@ img, figure {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
+}
+h1, .h1 {
+    font-size: calc(1.375rem + 1.5vw)
+}
+
+h2, .h2 {
+    font-size: calc(1.325rem + 0.9vw)
+}
+
+
+h3, .h3 {
+    font-size: calc(1.3rem + 0.6vw)
+}
+
+
+h4, .h4 {
+    font-size: calc(1.275rem + 0.3vw)
+}
+
+
+h5, .h5 {
+    font-size: 1.25rem
+}
+
+h6, .h6 {
+    font-size: 1rem
 }
