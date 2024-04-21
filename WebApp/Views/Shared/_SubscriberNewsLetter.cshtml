@@ -74,9 +74,8 @@
 
                     <div class="input-group">
 
-                        <input asp-for="Email" type="email" class="form-control rounded-start ps-5" placeholder="Your email"><br /><br />
+                        <input asp-for="Email" type="email" class="form-control rounded-start" placeholder="Your email"><br /><br />
 
-                        <div class="invalid-tooltip position-absolute top-100 start-0">Please provide a valid email address.</div>
                         <button type="submit" class="btn btn-primary" asp-controller="Subscribers" asp-action="Subscribe">Subscribe</button>
 
                         <button type="submit" class="btn btn-danger" asp-controller="Subscribers" asp-action="UnSubscribe">UnSubscribe</button>

@@ -92,14 +92,7 @@ namespace WebApp.Controllers
             {
                 TempData["statusMessage"] = "your email is Not exists";
             }
-            //using var httpclient = new HttpClient();
-            //httpclient.BaseAddress=new Uri("http://localhost:5233/api/Subscribers");
-            //var deleted =await httpclient.DeleteAsync(email);
-            //if (deleted.IsSuccessStatusCode) { TempData["statusMessage"] = "you are Unsubscribed"; }
-            //else if (deleted.StatusCode == HttpStatusCode.Conflict)
-            //{
-            //    TempData["statusMessage"] = "you Email is Invalid";
-            //}
+           
 
             return RedirectToAction("Index", "Subscribers", "Subscribe");
         }
